@@ -1,0 +1,12 @@
+B 3 C o m p i l a t i o n
+B 26 Equation Listing    SOLVE myModel Using LP From line 15
+D 29 obj
+D 34 eq1
+D 39 eq2
+D 44 eq3
+B 56 Column Listing      SOLVE myModel Using LP From line 15
+E 59 x
+E 80 z
+B 88 Range Statistics    SOLVE myModel Using LP From line 15
+B 99 Model Statistics    SOLVE myModel Using LP From line 15
+B 112 Solution Report     SOLVE myModel Using LP From line 15

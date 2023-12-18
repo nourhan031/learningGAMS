@@ -1,0 +1,44 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 10/30/23 15:47:39 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  *SET Demand for Cars /CAIRO,ALEX,ASWAN/;
+   2  *PARAMETER  A(I)  Demand in Markets
+   3  *  /CAIRO         350
+   4  *  ALEX          600
+   5  * ASWAN         200    /;
+   6  *-----------------------------------
+   7  Sets
+   8  l   Labor by category /GOV,PRIV/
+   9  h   Household type /URBAN,RURAL/;
+  10  *TABLE  LABOR (l,h) number of workers in thousands.
+  11   
+  12  *URBAN    RURAL
+  13  *GOV      400      350
+  14  *RIV      1000     700     ;
+  15   
+  16  PARAMETER A(l,h)
+  17     /GOV.URBAN   400
+  18      GOV.RURAL   350
+  19      PRIV.URBAN  1000
+  20      PRIV.RURAL  700
+  21  /;
+  22   
+  23   
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\2nd lab ex2\new2.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\2nd lab ex2\new2.lst

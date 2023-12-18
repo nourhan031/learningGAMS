@@ -1,0 +1,57 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 11:40:47 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  SET i /first, second /
+   2      j /one, two, three /
+   3      k /m, n /;
+   4   
+   5  PARAMETER ABC(i,j,k) / first.one.m 320.0,
+   6                         first.one.n 96.0,
+   7                         second.one.m 40.0,
+   8                         second.one.n 967.0,
+   9                         first.two.m 25.0,
+  10                         first.two.n 679.0,
+  11                         second.two.m 420.0,
+  12                         second.two.n 67.0,
+  13                         first.three.m 725.0,
+  14                         first.three.n 560.0,
+  15                         second.three.m 426.0,
+  16                         second.three.n 645.0 /;
+  17   
+  18  *option decimals = 2;
+  19   
+  20  display ABC;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 11:40:47 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     20 PARAMETER ABC  
+
+                       m           n
+
+first .one       320.000      96.000
+first .two        25.000     679.000
+first .three     725.000     560.000
+second.one        40.000     967.000
+second.two       420.000      67.000
+second.three     426.000     645.000
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q2.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q2.lst

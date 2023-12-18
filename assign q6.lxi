@@ -1,0 +1,17 @@
+B 3 C o m p i l a t i o n
+B 38 Equation Listing    SOLVE manufacturing Using LP From line 25
+D 41 profit
+D 46 raw_materials
+B 52 Column Listing      SOLVE manufacturing Using LP From line 25
+E 55 x
+E 68 z
+B 76 Range Statistics    SOLVE manufacturing Using LP From line 25
+B 87 Model Statistics    SOLVE manufacturing Using LP From line 25
+B 100 Solution Report     SOLVE manufacturing Using LP From line 25
+F 133 profit
+F 134 raw_materials
+G 139 x
+G 148 z
+B 158 E x e c u t i o n
+I 158 x
+I 165 z

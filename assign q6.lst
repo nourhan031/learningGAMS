@@ -1,0 +1,179 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Sets
+   2      i   "types of products"   / Widgets, Gadgets /
+   3   
+   4  Parameters
+   5      a(i)  "profit per unit of each product"  / Widgets 3, Gadgets 2 /
+   6      b(i)  "raw materials needed for each product" / Widgets 2, Gadgets 1 /
+   7      c    "total raw materials available" / 6 /;
+   8   
+   9  Variables
+  10      x(i)  "number of units to produce of each product"
+  11      z     "total profit";
+  12   
+  13  Positive Variable x;
+  14   
+  15  Equations
+  16      profit        "definition of total profit"
+  17      raw_materials "raw materials constraint";
+  18   
+  19  profit..        z  =e= sum(i, a(i)*x(i));
+  20   
+  21  raw_materials.. sum(i, b(i)*x(i))  =l= c;
+  22   
+  23  Model manufacturing /all/;
+  24   
+  25  Solve manufacturing using LP maximizing z;
+  26   
+  27  Display x.l, z.l;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE manufacturing Using LP From line 25
+
+
+---- profit  =E=  definition of total profit
+
+profit..  - 3*x(Widgets) - 2*x(Gadgets) + z =E= 0 ; (LHS = 0)
+     
+
+---- raw_materials  =L=  raw materials constraint
+
+raw_materials..  2*x(Widgets) + x(Gadgets) =L= 6 ; (LHS = 0)
+     
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE manufacturing Using LP From line 25
+
+
+---- x  number of units to produce of each product
+
+x(Widgets)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -3       profit
+        2       raw_materials
+
+x(Gadgets)
+                (.LO, .L, .UP, .M = 0, 0, +INF, 0)
+       -2       profit
+        1       raw_materials
+
+
+---- z  total profit
+
+z
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       profit
+
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Range Statistics    SOLVE manufacturing Using LP From line 25
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 6.000E+00, 6.000E+00] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+Matrix    [min, max] : [ 1.000E+00, 3.000E+00]
+
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE manufacturing Using LP From line 25
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           2     SINGLE EQUATIONS            2
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            3
+NON ZERO ELEMENTS             5
+
+
+GENERATION TIME      =        0.000 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE manufacturing Using LP From line 25
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   manufacturing       OBJECTIVE  z
+     TYPE    LP                  DIRECTION  MAXIMIZE
+     SOLVER  CPLEX               FROM LINE  25
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      1 Optimal
+**** OBJECTIVE VALUE               12.0000
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         0    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.1.1.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (1): optimal.
+--- Cplex Time: 0.00sec (det. 0.00 ticks)
+
+
+Optimal solution found
+Objective:           12.000000
+
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- EQU profit              .              .              .             1.0000      
+---- EQU raw_mater~        -INF            6.0000         6.0000         2.0000      
+
+  profit  definition of total profit
+  raw_materials  raw materials constraint
+
+---- VAR x  number of units to produce of each product
+
+               LOWER          LEVEL          UPPER         MARGINAL
+
+Widgets          .              .            +INF           -1.0000      
+Gadgets          .             6.0000        +INF             .          
+
+                           LOWER          LEVEL          UPPER         MARGINAL
+
+---- VAR z                 -INF           12.0000        +INF             .          
+
+  z  total profit
+
+
+**** REPORT SUMMARY :        0     NONOPT
+                             0 INFEASIBLE
+                             0  UNBOUNDED
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:36:30 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     27 VARIABLE x.L  number of units to produce of each product
+
+Gadgets 6.000
+
+
+----     27 VARIABLE z.L                   =       12.000  total profit
+
+
+EXECUTION TIME       =        0.031 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q6.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q6.lst

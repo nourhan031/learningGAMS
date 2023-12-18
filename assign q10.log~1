@@ -1,0 +1,38 @@
+
+--- Job assign q10.gms Start 11/29/23 10:41:14 45.1.0 88bbff72 WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\45\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input "C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.gms"
+    PageSize 0
+    ScrDir C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\225a\
+    SysDir C:\GAMS\45\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+          https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+          C:\GAMS\45\gamslice.txt
+          Demo license for demonstration and instructional purposes only
+Processor information: 1 socket(s), 8 core(s), and 16 thread(s) available
+GAMS 45.1.0   Copyright (C) 1987-2023 GAMS Development. All rights reserved
+--- Starting compilation
+--- assign q10.gms(32) 3 Mb 3 Errors
+*** Error 749 in C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.gms
+    Multiple USING clause
+*** Error 244 in C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.gms
+    Unknown or missing processor (LP,MIP,...)
+*** Error 812 in C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.gms
+    Solve keys expected - USING MAX/MIN SCENARIO
+--- assign q10.gms(34) 3 Mb 4 Errors
+*** Error 141 in C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+--- assign q10.gms(34) 3 Mb 4 Errors
+*** Status: Compilation error(s)
+--- Job assign q10.gms Stop 11/29/23 10:41:14 elapsed 0:00:00.014

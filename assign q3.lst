@@ -1,0 +1,39 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 00:57:07 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Sets
+   2      Fruits /Mango, Orange, Peach/;
+   3   
+   4  Parameters
+   5      Production(Fruits) /Mango 100, Orange 300, Peach 500/
+   6      Price(Fruits) /Mango 20, Orange 5, Peach 10/;
+   7   
+   8  Scalar TotalRevenue;
+   9   
+  10  TotalRevenue = sum(Fruits, Production(Fruits) * Price(Fruits));
+  11   
+  12  Display TotalRevenue;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 00:57:07 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     12 PARAMETER TotalRevenue         =     8500.000  
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q3.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q3.lst

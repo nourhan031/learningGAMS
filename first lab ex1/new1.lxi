@@ -1,0 +1,22 @@
+B 3 C o m p i l a t i o n
+B 29 Equation Listing    SOLVE nourhan Using LP From line 16
+D 32 obj
+D 37 const1
+D 42 const2
+B 48 Column Listing      SOLVE nourhan Using LP From line 16
+E 51 x1
+E 60 x2
+E 69 z
+B 77 Range Statistics    SOLVE nourhan Using LP From line 16
+B 88 Model Statistics    SOLVE nourhan Using LP From line 16
+B 101 Solution Report     SOLVE nourhan Using LP From line 16
+F 134 obj
+F 135 const1
+F 136 const2
+G 140 x1
+G 141 x2
+G 142 z
+B 150 E x e c u t i o n
+I 152 x1
+I 153 x2
+I 154 z

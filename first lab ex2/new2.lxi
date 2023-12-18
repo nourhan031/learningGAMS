@@ -1,0 +1,17 @@
+B 3 C o m p i l a t i o n
+B 29 Equation Listing    SOLVE lp2 Using LP From line 17
+D 32 ob
+D 37 constraints
+B 45 Column Listing      SOLVE lp2 Using LP From line 17
+E 48 z
+E 55 x
+B 71 Range Statistics    SOLVE lp2 Using LP From line 17
+B 82 Model Statistics    SOLVE lp2 Using LP From line 17
+B 95 Solution Report     SOLVE lp2 Using LP From line 17
+F 128 ob
+F 130 constraints
+G 139 z
+G 141 x
+B 154 E x e c u t i o n
+I 154 x
+I 161 z

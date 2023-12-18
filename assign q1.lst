@@ -1,0 +1,32 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 11:37:29 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Set c /Egypt, Italy, Nederland/;
+   2  Set p /Alexandria, Port_Said, Venice, Geneva, Amsterdam, Rotterdam/;
+   3   
+   4  Set cp(c, p) /
+   5      Egypt.Alexandria,
+   6      Egypt.Port_Said,
+   7      Italy.Venice,
+   8      Italy.Geneva,
+   9      Nederland.Amsterdam,
+  10      Nederland.Rotterdam
+  11  /;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+
+
+EXECUTION TIME       =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q1.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q1.lst

@@ -1,0 +1,62 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 10:41:49 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Sets
+   2     i /1*11/;
+   3   
+   4  Parameters
+   5     A(i);
+   6   
+   7  Scalar Threshold;
+   8  Threshold = 0;
+   9   
+  10  Variables
+  11     A_converted(i)
+  12     obj;
+  13   
+  14  Binary Variables
+  15     A_converted(i);
+  16   
+  17  Equations
+  18     ConversionCondition1(i)
+  19     ConversionCondition2(i)
+  20     Objective;
+  21   
+  22  ConversionCondition1(i)$(A(i) < Threshold)..
+  23     A_converted(i) =e= 0;
+  24   
+  25  ConversionCondition2(i)$(A(i) >= Threshold)..
+  26     A_converted(i) =e= 1;
+  27   
+  28  Objective..
+  29     obj =e= sum(i, A_converted(i));
+  30   
+  31  Model ConvertVector /all/;
+  32  Solve ConvertVector using mip minimizing obj;
+****                                              $66,256
+****  66  The symbol shown has not been defined or assigned
+****         A wild shot: You may have spurious commas in the explanatory
+****         text of a declaration. Check symbol reference list.
+**** 256  Error(s) in analyzing solve statement.
+**** The following MIP errors were detected in model ConvertVector:
+****  66 equation ConversionCondition1.. symbol "A" has no values assigned
+  33  Display A_converted.l;
+
+**** 2 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q10.lst
+
+**** USER ERROR(S) ENCOUNTERED

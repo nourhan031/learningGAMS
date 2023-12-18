@@ -1,0 +1,17 @@
+B 3 C o m p i l a t i o n
+B 28 Equation Listing    SOLVE example Using LP From line 16
+D 31 obj
+D 36 constraints
+B 44 Column Listing      SOLVE example Using LP From line 16
+E 47 x
+E 62 z
+B 70 Range Statistics    SOLVE example Using LP From line 16
+B 81 Model Statistics    SOLVE example Using LP From line 16
+B 94 Solution Report     SOLVE example Using LP From line 16
+F 127 obj
+F 129 constraints
+G 136 x
+G 145 z
+B 153 E x e c u t i o n
+I 153 x
+I 160 z

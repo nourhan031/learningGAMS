@@ -1,0 +1,48 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 08:44:26 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Set i /1*40/;
+   2   
+   3  Parameter count(i);
+   4  Parameter even_numbers(i);
+   5   
+   6  count(i) = ord(i);
+   7   
+   8  Scalar even;
+   9   
+  10  even = 2;
+  11   
+  12  loop(i,
+  13      if(mod(count(i), even) = 0,
+  14          even_numbers(i) = count(i);
+  15      );
+  16  );
+  17   
+  18  display even_numbers;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 08:44:26 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     18 PARAMETER even_numbers  
+
+2   2.000,    4   4.000,    6   6.000,    8   8.000,    10 10.000,    12 12.000,    14 14.000,    16 16.000,    18 18.000,    20 20.000,    22 22.000,    24 24.000,    26 26.000,    28 28.000,    30 30.000,    32 32.000,    34 34.000,    36 36.000,    38 38.000,    40 40.000
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q9.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q9.lst

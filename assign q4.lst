@@ -1,0 +1,156 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:23:51 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Set s /Xa, Xb, Xc, Xd/;
+   2   
+   3  Variables x(s), z;
+   4   
+   5  Equations obj, eq1, eq2, eq3;
+   6   
+   7  eq1.. x('Xa') =e= 5;
+   8  eq2.. x('Xb') =g= 10;
+   9  eq3(s).. x(s) =l= 30;
+  10   
+  11  obj..z =e= sum(s, x(s));
+  12   
+  13  Model myModel /all/;
+  14   
+  15  Solve myModel using LP minimizing z;
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:23:51 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Equation Listing    SOLVE myModel Using LP From line 15
+
+
+---- obj  =E=  
+
+obj..  - x(Xa) - x(Xb) - x(Xc) - x(Xd) + z =E= 0 ; (LHS = 0)
+     
+
+---- eq1  =E=  
+
+eq1..  x(Xa) =E= 5 ; (LHS = 0, INFES = 5 ****)
+     
+
+---- eq2  =G=  
+
+eq2..  x(Xb) =G= 10 ; (LHS = 0, INFES = 10 ****)
+     
+
+---- eq3  =L=  
+
+eq3(Xa)..  x(Xa) =L= 30 ; (LHS = 0)
+     
+eq3(Xb)..  x(Xb) =L= 30 ; (LHS = 0)
+     
+eq3(Xc)..  x(Xc) =L= 30 ; (LHS = 0)
+     
+REMAINING ENTRY SKIPPED
+
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:23:51 Page 3
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Column Listing      SOLVE myModel Using LP From line 15
+
+
+---- x  
+
+x(Xa)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -1       obj
+        1       eq1
+        1       eq3(Xa)
+
+x(Xb)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -1       obj
+        1       eq2
+        1       eq3(Xb)
+
+x(Xc)
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+       -1       obj
+        1       eq3(Xc)
+
+REMAINING ENTRY SKIPPED
+
+---- z  
+
+z
+                (.LO, .L, .UP, .M = -INF, 0, +INF, 0)
+        1       obj
+
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:23:51 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Range Statistics    SOLVE myModel Using LP From line 15
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 5.000E+00, 3.000E+01] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA]
+Matrix    [min, max] : [ 1.000E+00, 1.000E+00]
+
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:23:51 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE myModel Using LP From line 15
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS           4     SINGLE EQUATIONS            7
+BLOCKS OF VARIABLES           2     SINGLE VARIABLES            5
+NON ZERO ELEMENTS            11
+
+
+GENERATION TIME      =        0.094 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/27/23 01:23:51 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE myModel Using LP From line 15
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   myModel             OBJECTIVE  z
+     TYPE    LP                  DIRECTION  MINIMIZE
+     SOLVER  CPLEX               FROM LINE  15
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      19 Infeasible - No Solution
+**** OBJECTIVE VALUE               NA
+
+ RESOURCE USAGE, LIMIT          0.000 10000000000.000
+ ITERATION COUNT, LIMIT         0    2147483647
+*** This solver runs with a demo license. No commercial use.
+--- GMO setup time: 0.00s
+--- GMO memory 0.50 Mb (peak 0.50 Mb)
+--- Dictionary memory 0.00 Mb
+--- Cplex 22.1.1.0 link memory 0.00 Mb (peak 0.00 Mb)
+--- Starting Cplex
+
+
+--- LP status (4): unbounded or infeasible.
+--- Cplex Time: 0.00sec (det. 0.00 ticks)
+
+*** WARNING: Presolve found the problem infeasible or unbounded
+--- Cplex diagnoses the model to be either infeasible or unbounded.
+--- There is no such GAMS Model Status so returning with a status of infeasible.
+--- Model has been proven to be either infeasible or unbounded
+
+No solution returned
+
+
+EXECUTION TIME       =        0.250 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q4.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q4.lst

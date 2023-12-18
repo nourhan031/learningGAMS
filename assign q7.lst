@@ -1,0 +1,51 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 08:11:00 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  Sets
+   2      i / i1, i2, i3, i4, i5 /;
+   3   
+   4  Parameters
+   5      a(i) / i1 2, i2 10 /;
+   6   
+   7  Scalar forbiddenValue1, forbiddenValue2;
+   8  forbiddenValue1 = a('i1');
+   9  forbiddenValue2 = a('i2');
+  10   
+  11  Parameters
+  12      b(i);
+  13   
+  14  b(i)$(a(i) <> forbiddenValue1 and a(i) <> forbiddenValue2) = a(i) + 5;
+  15   
+  16  Display a, b;
+
+
+COMPILATION TIME     =        0.016 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 11/29/23 08:11:00 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----     16 PARAMETER a  
+
+i1  2.000,    i2 10.000
+
+
+----     16 PARAMETER b  
+
+i3 5.000,    i4 5.000,    i5 5.000
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q7.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\assign q7.lst

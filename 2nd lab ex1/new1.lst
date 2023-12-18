@@ -1,0 +1,67 @@
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 10/30/23 15:21:19 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+C o m p i l a t i o n
+
+
+   1  set i /dv1*dv100/;
+   2  display i;
+   3  SET u Egyptian Universities
+   4  / Cairo, Alex, Ain-Shams, British, October, German /
+   5  pu (u) Public Universities
+   6  / Cairo, Alex, Ain-Shams /
+   7  pr (u) Private Universities
+   8  / British, October, German /;
+   9   
+  10  SET C Activities /Agriculture, Industry, Services/;
+  11   
+  12  *SET k Activites /Agriculture, Industry, Services/;
+  13  Alias(C,k);
+  14  display k;
+  15   
+  16  SET MAP(C,k) mapping set /
+  17      Agriculture.Agriculture
+  18      Agriculture.Services
+  19      Agriculture.Industry
+  20      Industry.Industry
+  21      Services.Agriculture
+  22      Services.Industry /;
+  23   
+  24  display MAP
+
+
+COMPILATION TIME     =        0.000 SECONDS      3 MB  45.1.0 88bbff72 WEX-WEI
+GAMS 45.1.0  88bbff72 Oct 14, 2023          WEX-WEI x86 64bit/MS Windows - 10/30/23 15:21:19 Page 2
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+----      2 SET i  
+
+dv1  ,    dv2  ,    dv3  ,    dv4  ,    dv5  ,    dv6  ,    dv7  ,    dv8  ,    dv9  ,    dv10 ,    dv11 ,    dv12 ,    dv13 ,    dv14 ,    dv15 ,    dv16 ,    dv17 ,    dv18 ,    dv19 ,    dv20 ,    dv21 ,    dv22 ,    dv23 ,    dv24 ,    dv25 ,    dv26 ,    dv27 ,    dv28 ,    dv29 ,    dv30 ,    dv31 ,    dv32 ,    dv33 ,    dv34 ,    dv35 ,    dv36 ,    dv37 ,    dv38 ,    dv39 ,    dv40 ,    dv41 ,    dv42 ,    dv43 ,    dv44 ,    dv45 ,    dv46 ,    dv47 ,    dv48 ,    dv49 ,    dv50 ,    dv51 ,    dv52 ,    dv53 ,    dv54 ,    dv55 ,    dv56 ,    dv57 ,    dv58 ,    dv59 ,    dv60 ,    dv61 ,    dv62 ,    dv63 ,    dv64 ,    dv65 ,    dv66 ,    dv67 ,    dv68 ,    dv69 ,    dv70 ,    dv71 ,    dv72 ,    dv73 ,    dv74 ,    dv75 ,    dv76 ,    dv77 ,    dv78 ,    dv79 ,    dv80 ,    dv81 ,    dv82 ,    dv83 ,    dv84 ,    dv85 ,    dv86 ,    dv87 ,    dv88 ,    dv89 ,    dv90 ,    dv91 ,    dv92 ,    dv93 ,    dv94 ,    dv95 ,    dv96 ,    dv97 ,    dv98 ,    dv99 ,    dv100
+
+
+----     14 SET k  Aliased with C
+Agriculture,    Industry   ,    Services   
+
+
+----     24 SET MAP  mapping set
+
+             Agricultu~    Industry    Services
+
+Agriculture         YES         YES         YES
+Industry                        YES
+Services            YES         YES
+
+
+
+EXECUTION TIME       =        0.000 SECONDS      4 MB  45.1.0 88bbff72 WEX-WEI
+
+
+USER: GAMS Demo, for EULA and demo limitations see   G230930/0001CB-GEN
+      https://www.gams.com/latest/docs/UG%5FLicense.html         DC0000
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\2nd lab ex1\new1.gms
+Output     C:\Users\nourh\OneDrive\Documents\GAMS\Studio\workspace\2nd lab ex1\new1.lst
